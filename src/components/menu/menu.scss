@@ -1,3 +1,4 @@
+
 .topiclist-menu {
   display: flex;
   flex-direction: row;
@@ -7,5 +8,8 @@
   .image {
     width: 28PX;
     height: 28PX;
+  }
+  .drawer {
+    position: absolute;
   }
 }
