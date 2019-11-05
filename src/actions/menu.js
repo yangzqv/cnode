@@ -4,13 +4,13 @@ import { SHOWDRAWER, HIDEDRAWER, CHANGECATA } from '../constants/menu';
 
 export function showDrawer() {
   return dispatch => {
-    dispatch({ type: SHOWDRAWER });
+    dispatch({ type: SHOWDRAWER, isShow: Boolean(true) });
   }
 }
 
 export function hideDrawer() {
   return dispatch => {
-    dispatch({ type: HIDEDRAWER });
+    dispatch({ type: HIDEDRAWER, isShow: Boolean(false) });
   }
 }
 

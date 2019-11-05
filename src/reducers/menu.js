@@ -17,10 +17,10 @@ export default function menu(preState = MENU_STATE, action) {
   switch (action.type) {
     // 显示抽屉
     case SHOWDRAWER:
-      return { ...preState, isShow: true };
+      return { ...preState, isShow: action.isShow };
     // 隐藏抽屉
     case HIDEDRAWER:
-      return { ...preState, isShow: false };
+      return { ...preState, isShow: action.isShow };
     // 点击抽屉，触发切换分类
     case CHANGECATA:
       return {...preState, currentCata: action.currentCata}

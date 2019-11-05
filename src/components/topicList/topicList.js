@@ -19,6 +19,7 @@ class TopicList extends Component {
   }
   
   render() {
+    const { list } = this.props;
     return (
       <View>TopicList</View>
     )
