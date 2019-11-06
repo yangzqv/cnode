@@ -1,7 +1,9 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Text, Button } from '@tarojs/components';
+import { View, Text, ScrollView } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import { getTopicList } from '../../actions/topicList';
+import Topic from './topic';
+import './topicList.scss'
 
 @connect(({topicList, menu}) => ({
   ...topicList,
@@ -21,7 +23,9 @@ class TopicList extends Component {
   render() {
     const { list } = this.props;
     return (
-      <View>TopicList</View>
+      <ScrollView className='top-container'>
+        {list.map((item) => <Topic key={item.id} item={item} />)}
+      </ScrollView>
     )
   }
 }
