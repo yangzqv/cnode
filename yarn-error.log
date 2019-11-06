@@ -1,11 +1,11 @@
 Arguments: 
-  D:\Program Files\nodejs\node.exe D:\Program Files (x86)\Yarn\bin\yarn.js add taro-ui/dist/style/components/drawer.scss --silent --no-progress
+  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add taro-ui/dist/style/components/drawer.scss --silent --no-progress
 
 PATH: 
-  D:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;F:\cnode\node_modules\.bin;C:\Users\ADMINI~1\AppData\Local\Temp\yarn--1572953105980-0.953085168864167;F:\cnode\node_modules\.bin;C:\Users\Administrator\AppData\Local\Yarn\Data\link\node_modules\.bin;D:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;D:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;D:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\Administrator\bin;D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\local\bin;D:\Program Files\Git\usr\bin;D:\Program Files\Git\usr\bin;D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\bin;C:\Users\Administrator\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Program Files\Lenovo\Bluetooth Software;C:\Program Files\Lenovo\Bluetooth Software\syswow64;D:\Program Files\Git\cmd;D:\Program Files (x86)\Yarn\bin;D:\Program Files\nodejs;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Yarn\bin;D:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;D:\Program Files\Git\usr\bin\vendor_perl;D:\Program Files\Git\usr\bin\core_perl
+  C:\Program Files\nodejs\node_modules\npm\node_modules\npm-lifecycle\node-gyp-bin;E:\cnode\node_modules\.bin;C:\Users\ADMINI~1\AppData\Local\Temp\yarn--1573008352950-0.37336648392882776;E:\cnode\node_modules\.bin;C:\Users\Administrator\AppData\Local\Yarn\Data\link\node_modules\.bin;C:\Users\Administrator\AppData\Local\Yarn\bin;C:\Program Files\libexec\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\lib\node_modules\npm\bin\node-gyp-bin;C:\Program Files\nodejs\node_modules\npm\bin\node-gyp-bin;C:\Users\Administrator\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Administrator\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH;C:\Wnmp\php;C:\ProgramData\ComposerSetup\bin;C:\Program Files\nodejs;C:\Users\Administrator\.windows-build-tools\python27;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Local\atom\bin;C:\Users\Administrator\AppData\Roaming\Composer\vendor\bin;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Users\Administrator\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
 
 Yarn version: 
-  1.17.3
+  1.15.2
 
 Node version: 
   12.12.0
@@ -15,12 +15,12 @@ Platform:
 
 Trace: 
   Error: https://registry.yarnpkg.com/taro-ui%2fdist/style/components/drawer.scss: Request "https://registry.yarnpkg.com/taro-ui%2fdist/style/components/drawer.scss" returned a 405
-      at Request.params.callback [as _callback] (D:\Program Files (x86)\Yarn\lib\cli.js:65948:18)
-      at Request.self.callback (D:\Program Files (x86)\Yarn\lib\cli.js:140464:22)
+      at Request.params.callback [as _callback] (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66067:18)
+      at Request.self.callback (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:129541:22)
       at Request.emit (events.js:210:5)
-      at Request.<anonymous> (D:\Program Files (x86)\Yarn\lib\cli.js:141436:10)
+      at Request.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:130513:10)
       at Request.emit (events.js:210:5)
-      at IncomingMessage.<anonymous> (D:\Program Files (x86)\Yarn\lib\cli.js:141358:12)
+      at IncomingMessage.<anonymous> (C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:130435:12)
       at Object.onceWrapper (events.js:299:28)
       at IncomingMessage.emit (events.js:215:7)
       at endReadableNT (_stream_readable.js:1183:12)
@@ -54,8 +54,7 @@ npm manifest:
     "author": "",
     "license": "MIT",
     "dependencies": {
-      "@tarojs/async-await": "1.3.22",
-      "@tarojs/components": "1.3.22",
+      "@tarojs/async-await": "^1.3.22",
       "@tarojs/redux": "1.3.22",
       "@tarojs/redux-h5": "1.3.22",
       "@tarojs/router": "1.3.22",
@@ -65,35 +64,35 @@ npm manifest:
       "@tarojs/taro-swan": "1.3.22",
       "@tarojs/taro-tt": "1.3.22",
       "@tarojs/taro-weapp": "1.3.22",
-      "nervjs": "^1.4.0",
       "nerv-devtools": "^1.4.0",
+      "nervjs": "^1.4.0",
       "redux": "^4.0.0",
       "redux-logger": "^3.0.6",
       "redux-thunk": "^2.3.0"
     },
     "devDependencies": {
-      "@types/react": "^16.4.8",
-      "@types/webpack-env": "^1.13.6",
       "@tarojs/plugin-babel": "1.3.22",
       "@tarojs/plugin-csso": "1.3.22",
       "@tarojs/plugin-sass": "1.3.22",
       "@tarojs/plugin-uglifyjs": "1.3.22",
       "@tarojs/webpack-runner": "1.3.22",
+      "@types/react": "^16.4.8",
+      "@types/webpack-env": "^1.13.6",
+      "babel-eslint": "^8.2.3",
       "babel-plugin-transform-class-properties": "^6.24.1",
       "babel-plugin-transform-decorators-legacy": "^1.3.4",
       "babel-plugin-transform-jsx-stylesheet": "^0.6.5",
       "babel-plugin-transform-object-rest-spread": "^6.26.0",
       "babel-preset-env": "^1.6.1",
-      "babel-eslint": "^8.2.3",
       "eslint": "^5.16.0",
       "eslint-config-taro": "1.3.22",
+      "eslint-plugin-import": "^2.12.0",
       "eslint-plugin-react": "^7.8.2",
       "eslint-plugin-react-hooks": "^1.6.1",
-      "eslint-plugin-import": "^2.12.0",
+      "eslint-plugin-taro": "1.3.22",
       "stylelint": "9.3.0",
       "stylelint-config-taro-rn": "1.3.22",
-      "stylelint-taro-rn": "1.3.22",
-      "eslint-plugin-taro": "1.3.22"
+      "stylelint-taro-rn": "1.3.22"
     }
   }
 
@@ -219,26 +218,13 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@nodelib/fs.stat/-/fs.stat-1.1.3.tgz#2b5a3ab3f918cca48a8c754c08168e3f03eba61b"
     integrity sha512-shAmDyaQC4H92APFoIaVDHCx5bStIocgvbwQyxPRrbUY20V1EYTbSDchWbuwlMG3V17cprZhA6+78JfB+3DTPw==
   
-  "@tarojs/async-await@1.3.22":
+  "@tarojs/async-await@^1.3.22":
     version "1.3.22"
     resolved "https://registry.yarnpkg.com/@tarojs/async-await/-/async-await-1.3.22.tgz#536f43aff67340c390613f38970ecc7ec90f6e5e"
     integrity sha512-zSO/Qqwa1P9ukoxVkxFHxNikE/iBoFQEgEGRNsmirfp18XgJMZYgXSZ/ON0cd0l9EwIYbUjcVE10NWIGBDToSw==
     dependencies:
       promise-polyfill "^7.1.2"
       regenerator-runtime "^0.11.1"
-  
-  "@tarojs/components@1.3.22":
-    version "1.3.22"
-    resolved "https://registry.yarnpkg.com/@tarojs/components/-/components-1.3.22.tgz#116e4f24d918f961f4898fd7a3bf968ce05a9304"
-    integrity sha512-o/aZdkLfMAAWGPabrvJu6XGn48jK5bziT07xW/dupFO3swqU/vk7XMDkMl0a762WyZeWN9kUWWDHGybaZoMvpg==
-    dependencies:
-      better-scroll "^1.14.1"
-      classnames "^2.2.5"
-      intersection-observer "^0.7.0"
-      omit.js "^1.0.0"
-      resolve-pathname "^3.0.0"
-      swiper "4.4.2"
-      weui "^1.1.2"
   
   "@tarojs/plugin-babel@1.3.22":
     version "1.3.22"
@@ -1549,7 +1535,7 @@ Lockfile:
       mkdirp "^0.5.1"
       source-map-support "^0.4.15"
   
-  babel-runtime@^6.0.0, babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.23.0, babel-runtime@^6.26.0:
+  babel-runtime@^6.18.0, babel-runtime@^6.2.0, babel-runtime@^6.22.0, babel-runtime@^6.26.0:
     version "6.26.0"
     resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.26.0.tgz#965c7058668e82b55d7bfe04ff2337bc8b5647fe"
     integrity sha1-llxwWGaOgrVde/4E/yM3vItWR/4=
@@ -1642,13 +1628,6 @@ Lockfile:
     integrity sha1-pDAdOJtqQ/m2f/PKEaP2Y342Dp4=
     dependencies:
       tweetnacl "^0.14.3"
-  
-  better-scroll@^1.14.1:
-    version "1.15.2"
-    resolved "https://registry.yarnpkg.com/better-scroll/-/better-scroll-1.15.2.tgz#65ffc6058b8b4ff337b8dfad4bcb334d7699ceb6"
-    integrity sha512-sSY2N8I9/B+YX/9JpIz6pMQYnmBuvspBqZG4UxYaQEfz/ZWrnxwdyKLL4t6IKpFmxqtZadVypXw7vSSHxBZpBQ==
-    dependencies:
-      babel-runtime "^6.0.0"
   
   big.js@^3.1.3:
     version "3.2.0"
@@ -2153,11 +2132,6 @@ Lockfile:
       define-property "^0.2.5"
       isobject "^3.0.0"
       static-extend "^0.1.1"
-  
-  classnames@^2.2.5:
-    version "2.2.6"
-    resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.6.tgz#43935bffdd291f326dad0a205309b38d00f650ce"
-    integrity sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
   
   clean-css@4.2.x:
     version "4.2.1"
@@ -2907,13 +2881,6 @@ Lockfile:
     dependencies:
       domelementtype "^2.0.1"
       entities "^2.0.0"
-  
-  dom7@^2.1.2:
-    version "2.1.3"
-    resolved "https://registry.yarnpkg.com/dom7/-/dom7-2.1.3.tgz#a736f9c3bfbc4ca039a81cd095f97d1d7f3de19c"
-    integrity sha512-QTxHHDox+M6ZFz1zHPAHZKI3JOHY5iY4i9BK2uctlggxKQwRhO3q3HHFq1BKsT25Bm/ySSj70K6Wk/G4bs9rMQ==
-    dependencies:
-      ssr-window "^1.0.1"
   
   domain-browser@^1.1.1:
     version "1.2.0"
@@ -4474,11 +4441,6 @@ Lockfile:
     dependencies:
       default-gateway "^2.6.0"
       ipaddr.js "^1.5.2"
-  
-  intersection-observer@^0.7.0:
-    version "0.7.0"
-    resolved "https://registry.yarnpkg.com/intersection-observer/-/intersection-observer-0.7.0.tgz#ee16bee978db53516ead2f0a8154b09b400bbdc9"
-    integrity sha512-Id0Fij0HsB/vKWGeBe9PxeY45ttRiBmhFyyt/geBdDHBYNctMRTE3dC1U3ujzz3lap+hVXlEcVaB56kZP/eEUg==
   
   invariant@2.2.4, invariant@^2.2.0, invariant@^2.2.2, invariant@^2.2.4:
     version "2.2.4"
@@ -6127,13 +6089,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/obuf/-/obuf-1.1.2.tgz#09bea3343d41859ebd446292d11c9d4db619084e"
     integrity sha512-PX1wu0AmAdPqOL1mWhqmlOd8kOIZQwGZw6rh7uby9fTc5lhaOWFLX3I6R1hrF9k3zUY40e6igsLGkDXK92LJNg==
   
-  omit.js@^1.0.0:
-    version "1.0.2"
-    resolved "https://registry.yarnpkg.com/omit.js/-/omit.js-1.0.2.tgz#91a14f0eba84066dfa015bf30e474c47f30bc858"
-    integrity sha512-/QPc6G2NS+8d4L/cQhbk6Yit1WTB6Us2g84A7A/1+w9d/eRGHyEqC5kkQtHVoHZ5NFWGG7tUGgrhVZwgZanKrQ==
-    dependencies:
-      babel-runtime "^6.23.0"
-  
   on-finished@~2.3.0:
     version "2.3.0"
     resolved "https://registry.yarnpkg.com/on-finished/-/on-finished-2.3.0.tgz#20f1336481b083cd75337992a16971aa2d906947"
@@ -7332,11 +7287,6 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
     integrity sha512-bAFz9ld18RzJfddgrO2e/0S2O81710++chRMUxHjXOYKF6jTAMrUNZrEZ1PvV0zlhfjidm08iRPdTLPno1FuRg==
   
-  resolve-pathname@^3.0.0:
-    version "3.0.0"
-    resolved "https://registry.yarnpkg.com/resolve-pathname/-/resolve-pathname-3.0.0.tgz#99d02224d3cf263689becbb393bc560313025dcd"
-    integrity sha512-C7rARubxI8bXFNB/hqcp/4iUeIXJhJZvFPFPiSPRnhU5UPxzMFIl+2E6yY6c4k9giDJAhtV+enfA+G89N6Csng==
-  
   resolve-url-loader@2.3.0:
     version "2.3.0"
     resolved "https://registry.yarnpkg.com/resolve-url-loader/-/resolve-url-loader-2.3.0.tgz#e1b37034d48f22f8cfb9f04c026faaa070fdaf26"
@@ -7900,11 +7850,6 @@ Lockfile:
       safer-buffer "^2.0.2"
       tweetnacl "~0.14.0"
   
-  ssr-window@^1.0.1:
-    version "1.0.1"
-    resolved "https://registry.yarnpkg.com/ssr-window/-/ssr-window-1.0.1.tgz#30752a6a4666e7767f0b7e6aa6fc2fdbd0d9b369"
-    integrity sha512-dgFqB+f00LJTEgb6UXhx0h+SrG50LJvti2yMKMqAgzfUmUXZrLSv2fjULF7AWGwK25EXu8+smLR3jYsJQChPsg==
-  
   ssri@^5.2.4:
     version "5.3.0"
     resolved "https://registry.yarnpkg.com/ssri/-/ssri-5.3.0.tgz#ba3872c9c6d33a0704a7d71ff045e5ec48999d06"
@@ -8229,14 +8174,6 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/svg-tags/-/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
     integrity sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
-  
-  swiper@4.4.2:
-    version "4.4.2"
-    resolved "https://registry.yarnpkg.com/swiper/-/swiper-4.4.2.tgz#3a35237cbf4870034784e158b4197b65b763d647"
-    integrity sha512-Vfl4Zw4Z7iZwUu5S11JeC7OSy4nwky29nkUulkmg8lIqcWla6UtOhdap0gkyJRYS+UJXki+GWQsbFM0SZRxZPQ==
-    dependencies:
-      dom7 "^2.1.2"
-      ssr-window "^1.0.1"
   
   symbol-observable@^1.2.0:
     version "1.2.0"
@@ -8958,11 +8895,6 @@ Lockfile:
     version "0.1.3"
     resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
     integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
-  
-  weui@^1.1.2:
-    version "1.1.3"
-    resolved "https://registry.yarnpkg.com/weui/-/weui-1.1.3.tgz#0f0899bb61bb2ec603b2648367a8139298f81514"
-    integrity sha512-vC6eWUvG1MYoE8yLsvBBmLB2+4DZWynQOL47MUscHMwPVltOZPGsiRb2PE7y3z+w3ElF1SsmJsyhr40wiXgP5A==
   
   whatwg-fetch@^2.0.4:
     version "2.0.4"

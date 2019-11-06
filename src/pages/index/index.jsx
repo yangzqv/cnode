@@ -1,34 +1,33 @@
-import Taro, { Component } from '@tarojs/taro'
-import { View, Button, Text } from '@tarojs/components'
-import './index.scss'
+import Taro, { Component } from "@tarojs/taro";
+import { View, Button, Text } from "@tarojs/components";
+import '@tarojs/async-await'
+import "./index.scss";
 
-import Menu from '../../components/menu/menu';
-import TopicList from '../../components/topicList/topicList';
+import Menu from "../../components/menu/menu";
+import TopicList from "../../components/topicList/topicList";
 
 class Index extends Component {
+  config = {
+    navigationBarTitleText: "首页"
+  };
 
-    config = {
-    navigationBarTitleText: '首页'
+  componentWillReceiveProps(nextProps) {
   }
 
-  componentWillReceiveProps (nextProps) {
-    console.log(this.props, nextProps)
-  }
+  componentWillUnmount() {}
 
-  componentWillUnmount () { }
+  componentDidShow() {}
 
-  componentDidShow () { }
+  componentDidHide() {}
 
-  componentDidHide () { }
-
-  render () {
+  render() {
     return (
       <View className='index'>
         <Menu />
         <TopicList />
       </View>
-    )
+    );
   }
 }
 
-export default Index
+export default Index;
