@@ -26,7 +26,7 @@ class Topic extends Component {
         <Image src={item.author.avatar_url} className='topic-img'></Image>
         <View className='right-desc'>
           <View className='des-title'>
-            <View className='desc-type'>{item.top ? '置顶' : ''}</View>
+            {item.top ? <View className='desc-type'>置顶</View> : (item.tab === 'share' ? <View className='desc-type blue'>分享</View> : <View className='desc-type blue'>问答</View>)}
             <View className='des-detail'>{item.title}</View>
           </View>
           <View className='des-intro'>

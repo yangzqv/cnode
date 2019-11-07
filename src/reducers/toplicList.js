@@ -9,7 +9,7 @@ const TOPICLIST_STATE = {
 export default function topicList(preState = TOPICLIST_STATE, action) {
   switch (action.type) {
     case GETTOPICLIST:
-      return { ...preState, list: action.list };
+      return { ...preState, list: action.list, page: 1 };
     case GETNEXTTOPICLIST:
       return { ...preState, list: preState.list.concat(action.list), page: action.page}
     default:

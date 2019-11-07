@@ -40,7 +40,10 @@ class Menu extends Component {
   clickCata(index) {
     const { cataData } = this.props;
     const clickCata = cataData[index];
-    this.props.onChangeCata && this.props.onChangeCata(clickCata);
+    // 节省开销
+    if (clickCata.key !== this.props.currentCata.key) {
+      this.props.onChangeCata && this.props.onChangeCata(clickCata);
+    }
   }
 
   render() {
