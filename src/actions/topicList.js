@@ -1,4 +1,4 @@
-import { GETTOPICLIST } from '../constants/topicList';
+import { GETTOPICLIST, GETNEXTTOPICLIST } from '../constants/topicList';
 import { getJSON, postJSON } from '../utils/request';
 import api from '../constants/api';
 
@@ -7,6 +7,15 @@ export function getTopicList(params) {
     const result = await getJSON(api.getTopics, params);
     if (result.data.success) {
       dispatch({type: GETTOPICLIST, list: result.data.data})
+    }
+  }
+}
+
+export function getNextTopicList(params) {
+  return async dispatch => {
+    const result = await getJSON(api.getTopics, params);
+    if (result.data.success && result.data.data.length > 0 ) {
+      dispatch({type: GETNEXTTOPICLIST, list: result.data.data, page: params.page})
     }
   }
 }

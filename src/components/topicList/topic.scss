@@ -7,20 +7,28 @@
     width: 48PX;
     height: 48PX;
     margin-left: -6PX;
+    border-radius: 50%;
   }
   .right-desc {
     width: 77%;
     margin-top: 9PX;
     .des-title {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
       margin-bottom: 12PX;
       .desc-type {
         box-sizing: border-box;
+        border-radius: 5PX;
+        width: 53PX;
+        height: 31PX;
         padding: 4PX 8PX;
         background-color: pink;
         color: #fff;
+        text-align: center;
       }
       .des-detail {
-        margin-left: 8PX;
+        width: 77%;
         font-weight: bold;
       }
     }
