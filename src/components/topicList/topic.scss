@@ -1,0 +1,34 @@
+.topic-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 25PX;
+  .topic-img {
+    width: 48PX;
+    height: 48PX;
+    margin-left: -6PX;
+  }
+  .right-desc {
+    width: 77%;
+    margin-top: 9PX;
+    .des-title {
+      margin-bottom: 12PX;
+      .desc-type {
+        box-sizing: border-box;
+        padding: 4PX 8PX;
+        background-color: pink;
+        color: #fff;
+      }
+      .des-detail {
+        margin-left: 8PX;
+        font-weight: bold;
+      }
+    }
+    .des-intro {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 12PX;
+    }
+  }
+}
