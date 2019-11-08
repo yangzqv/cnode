@@ -18,11 +18,17 @@ class Topic extends Component {
       create_at: '2019-01-01'
     }
   }
+
+  goToDetail(topicId) {
+    Taro.navigateTo({
+      url: `/pages/detail/index?topicId=${topicId}`
+    })
+  }
   
   render() {
     const { item } = this.props;
     return (
-      <View className='topic-content'>
+      <View className='topic-content' onClick={this.goToDetail.bind(this, item.id)}>
         <Image src={item.author.avatar_url} className='topic-img'></Image>
         <View className='right-desc'>
           <View className='des-title'>

@@ -1,4 +1,4 @@
-import { GETTOPICLIST, GETNEXTTOPICLIST } from '../constants/topicList';
+import { GETTOPICLIST, GETNEXTTOPICLIST, GETTOPICINFO } from '../constants/topicList';
 import { getJSON, postJSON } from '../utils/request';
 import api from '../constants/api';
 
@@ -19,3 +19,14 @@ export function getNextTopicList(params) {
     }
   }
 }
+
+// 请求话题详情
+export function getTopicInfo(params) {
+  return async dispatch => {
+    const result = await getJSON(api.getTopicInfo + params.id, params);
+    if (result.data.success) {
+      dispatch({type: GETTOPICINFO, infoData: result.data.data})
+    }
+  }
+}
+
