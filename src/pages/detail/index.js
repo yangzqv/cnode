@@ -2,6 +2,9 @@ import Taro, { Component, connectSocket } from '@tarojs/taro';
 import { View, Text, Button } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import { getTopicInfo } from '../../actions/topicList';
+import Replies from '../../components/topicInfo/replies';
+import TopicInfo from '../../components/topicInfo/topicInfo';
+import './detail.scss';
 
 @connect(({topicList}) => ({
   topicInfo: topicList.topicInfo,
@@ -22,10 +25,11 @@ class Detail extends Component {
 
   render() {
     const { topicInfo, replies } = this.props;
-    
-
     return (
-      <View>Detail</View>
+      <View className='detail-container'>
+        <TopicInfo topicInfo={topicInfo} />
+        <Replies  replies={replies} />
+      </View>
     )
   }
 }
