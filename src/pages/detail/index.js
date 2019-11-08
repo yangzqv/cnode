@@ -16,6 +16,11 @@ import './detail.scss';
 }))
 
 class Detail extends Component {
+  config = {
+    navigationBarTitleText: "话题详情"
+  };
+
+
   componentWillMount() {
     const { topicId } = this.$router.params;
     if (this.props.onGetTopicInfo && topicId) {

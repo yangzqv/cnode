@@ -1,11 +1,11 @@
 import Taro, { Component } from '@tarojs/taro';
 import { View, Text, Button, RichText } from '@tarojs/components';
+import myTimeToLocal from '../../utils/date';
 import './topicInfo.scss';
 
 class TopicInfo extends Component {
   render() {
     const { topicInfo } = this.props;
-
     return (
       <View className='topic-info-container'>
         <View className='topic-info-header'>
@@ -15,7 +15,7 @@ class TopicInfo extends Component {
             <Text className='topic-title-desc'>{topicInfo.title}</Text>
           </View>
           <View className='topic-info-header-pie'>
-            <Text>{topicInfo.create_at}</Text>
+            <Text>{myTimeToLocal(topicInfo.create_at)}</Text>
             <Text>{topicInfo.author.loginname}</Text>
             <Text>{topicInfo.visit_count + ' 次浏览'}</Text>
           </View>
@@ -26,6 +26,10 @@ class TopicInfo extends Component {
       </View>
     )
   }
+}
+
+TopicInfo.defaultProps = {
+  topicInfo: {}
 }
 
 export default TopicInfo;
