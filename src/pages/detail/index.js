@@ -6,13 +6,14 @@ import Replies from '../../components/topicInfo/replies';
 import TopicInfo from '../../components/topicInfo/topicInfo';
 import './detail.scss';
 
-@connect(({topicList}) => ({
+@connect(({topicList, user}) => ({
   topicInfo: topicList.topicInfo,
-  replies: topicList.replies
+  replies: topicList.replies,
+  user
 }), (dispatch) => ({
   onGetTopicInfo(params) {
     dispatch(getTopicInfo(params))
-  }
+  }  
 }))
 
 class Detail extends Component {
@@ -22,9 +23,10 @@ class Detail extends Component {
 
 
   componentWillMount() {
+    const { user } = this.props;
     const { topicId } = this.$router.params;
     if (this.props.onGetTopicInfo && topicId) {
-      this.props.onGetTopicInfo({id: topicId})
+      this.props.onGetTopicInfo({id: topicId, mdrender: true, accesstoken: user.accesstoken})
     }
   }
 

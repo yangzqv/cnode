@@ -4,6 +4,7 @@ import { connect } from '@tarojs/redux';
 import myTimeToLocal from '../../utils/date' 
 import './replies.scss';
 import zan from '../../assets/img/zan.png';
+import myzan from '../../assets/img/myzan.png';
 import zhuan from '../../assets/img/zhuan.png'
 
 const isWeapp = process.env.TARO_ENV === 'weapp'
@@ -27,8 +28,12 @@ class Replies extends Component {
                 </View>
               </View>
               <View className='topicinfo-repliy-right-zan'>
-                <Image className='topicinfo-repliy-image' src={zan}></Image>
-                <Text>0</Text>
+                <Image 
+                  className='topicinfo-repliy-image' 
+                  src={item.is_uped ? myzan : zan}
+                  onClick={this.admire.bind(this, item)}
+                ></Image>
+                <Text>{item.ups.length}</Text>
                 <Image className='topicinfo-repliy-image' src={zhuan}></Image>
               </View>
             </View>
