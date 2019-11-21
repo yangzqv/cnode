@@ -1,9 +1,4 @@
 import Taro, { Component } from '@tarojs/taro';
-<<<<<<< HEAD
-import { View, Text, Button, Image } from '@tarojs/components';
-import { connect } from '@tarojs/redux';
-import './replies.scss';
-=======
 import { View, Text, Button, Image, RichText} from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import myTimeToLocal from '../../utils/date' 
@@ -11,37 +6,12 @@ import './replies.scss';
 import zan from '../../assets/img/zan.png';
 import myzan from '../../assets/img/myzan.png';
 import zhuan from '../../assets/img/zhuan.png'
->>>>>>> b18f4980d0bc6d041ddca8e117c7940fcdb1afa2
 
 const isWeapp = process.env.TARO_ENV === 'weapp'
 class Replies extends Component {
   render() {
     const { replies } = this.props;
     return (
-<<<<<<< HEAD
-      <View className='topicInfo-replies'>
-        {replies.map(item => {
-          return (
-            <View 
-              className='topicInfo-reply'
-              key={item.id}
-            >
-              <Image className='topicInfo-reply-image'></Image>
-              <View className='topicInfo-reply-right'>
-                <View className='topicInfo-reply-right-body'>
-                  <View className='topicInfo-reply-right-pie'></View>
-                  <View className='topicInfo-reply-right-content'></View>
-                </View>
-                <View className='topicInfo-reply-right-zan'>
-                  <Image></Image>
-                  <Text></Text>
-                  <Image></Image>
-                </View>
-              </View>
-            </View>
-          )
-        })}
-=======
       <View className='topicinfo-replies'>
         {replies.map((item, index) => (
           <View key={item.id} className='topicinfo-repliy'> 
@@ -69,7 +39,6 @@ class Replies extends Component {
             </View>
           </View>
         ))}
->>>>>>> b18f4980d0bc6d041ddca8e117c7940fcdb1afa2
       </View>
     )
   }
