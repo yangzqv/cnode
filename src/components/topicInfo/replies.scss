@@ -1,0 +1,21 @@
+.topicInfo-reply {
+  display: flex;
+  flex-direction: row;
+  .topicInfo-reply-image {
+    width: 30PX;
+    height: 30PX;
+    border-radius: 50%;
+  }
+  .topicInfo-reply-right {
+    display: flex;
+    flex-direction: row;
+    .topicInfo-reply-right-body {
+      display: flex;
+      flex-direction: column;
+    }
+    .topicInfo-reply-right-zan {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
