@@ -1,4 +1,10 @@
-import { GETTOPICLIST, GETNEXTTOPICLIST, GETTOPICINFO } from '../constants/topicList';
+import Taro from '@tarojs/taro';
+import { 
+  GETTOPICLIST, 
+  GETNEXTTOPICLIST, 
+  GETTOPICINFO,
+  ADMIRESUCCESS
+} from '../constants/topicList';
 import { getJSON, postJSON } from '../utils/request';
 import api from '../constants/api';
 
@@ -26,6 +32,22 @@ export function getTopicInfo(params) {
     const result = await getJSON(api.getTopicInfo + params.id, params);
     if (result.data.success) {
       dispatch({type: GETTOPICINFO, infoData: result.data.data})
+    }
+  }
+}
+
+// 点赞话题回复
+export function admireTopic(params) {
+  return async dispatch => {
+    const result = await postJSON(api.upReplay + params.replyid + '/ups', params);
+    console.log('result', result)
+    if (result && result.data && result.data.success) {
+      dispatch({type: ADMIRESUCCESS})
+    } else {
+       Taro.showToast({
+         title: '点赞失败',
+         icon: 'none'
+       })
     }
   }
 }
