@@ -1,21 +1,35 @@
-.topicInfo-reply {
+.topicinfo-repliy {
   display: flex;
   flex-direction: row;
-  .topicInfo-reply-image {
+  width: 100%;
+  font-size: 14PX;
+  margin: 10PX 0;
+  padding: 0 10PX;
+  .topicinfo-repliy-image {
     width: 30PX;
     height: 30PX;
     border-radius: 50%;
   }
-  .topicInfo-reply-right {
+  .topicinfo-repliy-right {
     display: flex;
     flex-direction: row;
-    .topicInfo-reply-right-body {
+    flex-grow: 1;
+    justify-content: space-between;
+    padding: 0 20PX;
+    .topicinfo-repliy-right-body {
       display: flex;
       flex-direction: column;
+      .topicinfo-repliy-right-pie {
+        margin-bottom: 5px;
+      }
     }
-    .topicInfo-reply-right-zan {
+    .topicinfo-repliy-right-zan {
       display: flex;
       flex-direction: row;
+      .opicinfo-repliy-image {
+        width: 26PX;
+        height: 26PX;
+      }
     }
   }
 }
