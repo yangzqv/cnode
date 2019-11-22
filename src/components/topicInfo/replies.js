@@ -9,6 +9,10 @@ import zhuan from '../../assets/img/zhuan.png'
 
 const isWeapp = process.env.TARO_ENV === 'weapp'
 class Replies extends Component {
+  admire(reply) {
+    
+  }
+
   render() {
     const { replies } = this.props;
     return (
