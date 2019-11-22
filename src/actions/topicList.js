@@ -37,18 +37,35 @@ export function getTopicInfo(params) {
 }
 
 // 点赞话题回复
-export function admireTopic(params) {
-  return async dispatch => {
-    const result = await postJSON(api.upReplay + params.replyid + '/ups', params);
-    console.log('result', result)
-    if (result && result.data && result.data.success) {
-      dispatch({type: ADMIRESUCCESS})
-    } else {
-       Taro.showToast({
-         title: '点赞失败',
-         icon: 'none'
-       })
-    }
+
+// redux 的做法
+// export function admireTopic(params) {
+//   return async dispatch => {
+//     const result = await postJSON(api.upReplay + params.replyid + '/ups', params);
+//     console.log('result', result)
+//     if (result && result.data && result.data.success) {
+//       dispatch({type: ADMIRESUCCESS})
+//     } else {
+//        Taro.showToast({
+//          title: '点赞失败',
+//          icon: 'none'
+//        })
+//     }
+//   }
+// }
+// 普通方法
+export async function admireTopic(params) {  
+  const result = await postJSON(api.upReplay + params.replyid + '/ups', params);
+  console.log('result', result)
+  if (result && result.data && result.data.success) {
+    return result.data;
+  } else {
+      Taro.showToast({
+        title: '点赞失败',
+        icon: 'none'
+      })
   }
+
+  return false;
 }
 
