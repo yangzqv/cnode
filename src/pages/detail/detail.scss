@@ -2,4 +2,13 @@
   box-sizing: border-box;
   padding-left: 10PX;
   padding-right: 10PX;
+  .replyBtn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-radius: 0;
+    background-color: #ff4081;
+    color: #fff;
+  }
 }
