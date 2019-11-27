@@ -1,7 +1,7 @@
 import Taro, { Component, connectSocket } from '@tarojs/taro';
 import { View, Text, Button } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
-import { getTopicInfo, admireTopic } from '../../actions/topicList';
+import { getTopicInfo, admireTopic, replyContent } from '../../actions/topicList';
 import Replies from '../../components/topicInfo/replies';
 import TopicInfo from '../../components/topicInfo/topicInfo';
 import ReplyContent from '../../components/topicInfo/replyContent';
@@ -71,12 +71,32 @@ class Detail extends Component {
     this.setState({showReplyContent: true});
   }
 
+  onHandleCancel() {
+    this.setState({showReplyContent: false})
+  }
+
+  onHandleOk(content) {
+    const { user } = this.props;
+    const params = { topicid: this.$router.params, accesstoken: user.accesstoken, content } 
+    replyContent(params).then(result => {
+      if (result.success) {
+        this.getDetail();
+        this.onHandleCancel();
+      }
+    })
+  }
+
   render() {
     const { topicInfo, replies } = this.props;
     const { showReplyContent } = this.state;
     return (
       <View className='detail-container'>
-        {showReplyContent && (<ReplyContent />)}
+        {showReplyContent && 
+          (<ReplyContent 
+            onCancel={this.onHandleCancel.bind(this)}
+            onOk={this.onHandleOk.bind(this)}
+          />)
+        }
         <TopicInfo topicInfo={topicInfo} />
         <Replies  replies={replies} onAdmire={this.admire.bind(this)}  />
         <Button className='replyBtn' onClick={this.reply.bind(this)}>回复</Button>

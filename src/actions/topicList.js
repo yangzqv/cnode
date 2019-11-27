@@ -69,3 +69,18 @@ export async function admireTopic(params) {
   return false;
 }
 
+// 评论功能
+export async function replyContent(params) {
+  const result = await postJSON(api.replayTopic + params.topicid + '/replies', params);
+  if (result && result.data && result.data.success) {
+    return result.data;
+  } else {
+      Taro.showToast({
+        title: '评论失败',
+        icon: 'none'
+      })
+  }
+
+  return false;
+}
+

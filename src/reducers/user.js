@@ -1,5 +1,5 @@
 const USER_STATE = {
-  accesstoken: 'ff12442f-5de8-4b16-9d0c-4f953ae16a26',
+  accesstoken: '6a6f9c7f-f282-4e5b-8825-efc52a8d6eb8',
 }
 
 export default function user(preState=USER_STATE, action) {
