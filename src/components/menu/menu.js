@@ -46,6 +46,12 @@ class Menu extends Component {
     }
   }
 
+  onHandleLogin() {
+    Taro.navigateTo({
+      url: '/pages/login/login'
+    })
+  }
+
   render() {
     const { isShow, cataData } = this.props;
     const items = this.getItems(cataData);
@@ -61,7 +67,11 @@ class Menu extends Component {
         </View>
         <Image onClick={this.showDrawer.bind(this)} src={cata} className='image' />
         <Text>{this.props.currentCata ? this.props.currentCata.value : ''}</Text>
-        <Image src={login} className='image' />
+        <Image 
+          src={login} 
+          className='image' 
+          onClick={this.onHandleLogin.bind(this)}
+        />
       </View>
     )
   }
