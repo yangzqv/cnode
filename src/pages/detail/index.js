@@ -77,7 +77,7 @@ class Detail extends Component {
 
   onHandleOk(content) {
     const { user } = this.props;
-    const params = { topicid: this.$router.params, accesstoken: user.accesstoken, content } 
+    const params = { topicid: this.$router.params.topicId, accesstoken: user.accesstoken, content } 
     replyContent(params).then(result => {
       if (result.success) {
         this.getDetail();
