@@ -12,6 +12,7 @@ import accessToken from '../../actions/user';
     return dispatch(accessToken(params))
   }
 }))
+
 class Login extends Component {
   config = {
     navigationBarTitleText: "登录"
@@ -33,7 +34,11 @@ class Login extends Component {
   loginToken() {
     if (this.state.token && this.props.onGetUserToken) {
       this.props.onGetUserToken({accesstoken: this.state.token}).then(result => {
-        
+        if (result && result.success) {
+          Taro.redirectTo({
+            url: '/pages/user/user'
+          })
+        }
       })
     } else {
       Taro.showToast({
