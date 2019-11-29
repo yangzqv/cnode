@@ -31,10 +31,9 @@ class Login extends Component {
 
   // 验证token
   loginToken() {
-    console.log(this.state.token)
     if (this.state.token && this.props.onGetUserToken) {
       this.props.onGetUserToken({accesstoken: this.state.token}).then(result => {
-        console.log('验证成功')
+        
       })
     } else {
       Taro.showToast({

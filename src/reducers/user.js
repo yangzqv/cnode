@@ -1,9 +1,16 @@
+import { LOGIN_SUCCESS, LOGIN_FAIL } from '../constants/user';
+
 const USER_STATE = {
-  accesstoken: '6a6f9c7f-f282-4e5b-8825-efc52a8d6eb8',
+  accesstoken: null,
+  loginname: null
 }
 
 export default function user(preState=USER_STATE, action) {
   switch(action.type) {
+    case LOGIN_SUCCESS:
+      return {...preState, accesstoken: action.accessToken, loginname: action.loginname};
+    case LOGIN_FAIL:
+      return {...preState, accesstoken: null, loginname: null}
     default:
       return {...preState};
   }
