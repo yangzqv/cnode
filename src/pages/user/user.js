@@ -13,7 +13,6 @@ import './user.scss';
 }))
 
 class User extends Component {
-
   state = {
     recent_topics: [],
     recent_replies: []
