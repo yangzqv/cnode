@@ -42,7 +42,9 @@ class Publish extends Component {
       const params = { tab: 'dev', title, content, accesstoken };
       const result = await submitTopic(params);
       if (result) {
-        Taro.navigateBack();
+        Taro.redirectTo({
+          url: '/pages/user/user'
+        })
       }
     } else {
       Taro.showToast({
@@ -57,18 +59,26 @@ class Publish extends Component {
     const { selectorChecked } = this.state;
 
     return (
-      <View>
+      <View className='publish-topic'>
+        <Input 
+          placeholder='请输入您要发布的标题' 
+          onInput={this.titleChange.bind(this)} 
+          className='publish-topic-title'
+        />
+        <Textarea 
+          placeholder='请输入您要发布的内容' 
+          onInput={this.contentChange.bind(this)} 
+          className='publish-topic-content'  
+        />
         <Picker
           mode='selector'
           range={cataData}
           rangeKey='value'
           onChange={this.changeCata.bind(this)}
         >
-          <View className='picker'>{selectorChecked ? selectorChecked : '请选择'}</View>
+          <View className='publish-topic-cata'>{selectorChecked ? selectorChecked : '请选择'}</View>
         </Picker>
-        <Input placeholder='请输入您要发布的标题' onInput={this.titleChange.bind(this)} />
-        <Textarea placeholder='请输入您要发布的内容' onInput={this.contentChange.bind(this)} />
-        <Button onClick={this.submitTopic.bind(this)}>提交</Button>
+        <Button className='publish-topic-btn' onClick={this.submitTopic.bind(this)}>提交</Button>
       </View>
     );
   }

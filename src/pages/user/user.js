@@ -28,7 +28,7 @@ class User extends Component {
   }
 
   toPublish() {
-    Taro.navigateTo({
+    Taro.redirectTo({
       url: '/pages/publish/publish'
     })
   }

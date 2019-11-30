@@ -1,0 +1,24 @@
+.publish-topic {
+  padding: 10PX;
+  .publish-topic-title,
+  .publish-topic-content {
+    width: 100%;
+    margin: 10PX 0;
+  }
+  .publish-topic-title {
+    border-bottom: 1PX solid #ccc;
+    padding-bottom: 10PX;
+  }
+  .publish-topic-cata {
+    width: 100%;
+    text-align: right;
+    margin: 10PX 0;
+    padding-right: 10PX;
+    border-bottom: 1PX solid #ccc;
+  }
+  .publish-topic-btn {
+    margin-top: 20PX;
+    background-color: #ff4081;
+    color: #fff;
+  }
+}
