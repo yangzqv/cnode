@@ -8,8 +8,6 @@ import './user.scss';
 
 @connect(({user}) => ({
   user
-}), () => ({
-
 }))
 
 class User extends Component {
@@ -29,6 +27,12 @@ class User extends Component {
     }
   }
 
+  toPublish() {
+    Taro.navigateTo({
+      url: '/pages/publish/publish'
+    })
+  }
+
   render() {
     const { loginname, avatar_url } = this.props.user;
     const { recent_topics, recent_replies } = this.state;
@@ -38,6 +42,7 @@ class User extends Component {
         <Head avatar_url={avatar_url} loginname={loginname} />
         <Panel listData={recent_topics} title='最近发布的话题' />
         <Panel listData={recent_replies} title='最近收到的回复' />
+        <Button onClick={this.toPublish.bind(this)} className='publish-btn'>发布话题</Button>
       </View>
     )
   }

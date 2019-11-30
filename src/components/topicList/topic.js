@@ -29,7 +29,7 @@ class Topic extends Component {
     const { item } = this.props;
     return (
       <View className='topic-content' onClick={this.goToDetail.bind(this, item.id)}>
-        <Image src={item.author.avatar_url} className='topic-img'></Image>
+        <Image src={item.author.avatar_url ? item.author.avatar_url  : ''} className='topic-img'></Image>
         <View className='right-desc'>
           <View className='des-title'>
             {item.top ? <View className='desc-type'>置顶</View> : (item.tab === 'share' ? <View className='desc-type blue'>分享</View> : <View className='desc-type blue'>问答</View>)}

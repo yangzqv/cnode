@@ -12,17 +12,25 @@
     justify-content: space-between;
     align-items: center;
     margin: 8PX 0;
-    .topic-panel-list-img {
-      width: 26PX;
-      height: 26PX;
-      border-radius: 50%;
-      margin-right: 4PX;
-    }
-    .topic-panel-desc {
-      width: 30%;
+    .topic-panel-left {
+      width: 60%;
       overflow: hidden;
+      white-space: nowrap;
+      text-overflow:ellipsis;
+      .topic-panel-list-img {
+        width: 26PX;
+        height: 26PX;
+        border-radius: 50%;
+        margin-right: 4PX;
+        vertical-align: middle;
+      }
+      .topic-panel-desc {
+        color: blue;
+      }
     }
+    
     .topic-panel-list-date {
+      width: 42%;
       color: #ccc;
     }
   }
