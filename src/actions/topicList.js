@@ -84,3 +84,18 @@ export async function replyContent(params) {
   return false;
 }
 
+// 新建话题
+export async function submitTopic(params) {
+  const result = await postJSON(api.createTopic, params);
+  if (result && result.data && result.data.success) {
+    return result.data;
+  } else {
+    Taro.showToast({
+      title: '发布话题失败',
+      icon: 'none'
+    })
+  }
+
+  return false;
+}
+

@@ -54,7 +54,7 @@ class Login extends Component {
         <Head />
         <View className='form'>
           <Input 
-            onChange={this.changeToken.bind(this)} 
+            onInput={this.changeToken.bind(this)} 
             className='access-input' 
             placeholder='请输入token' 
           />
