@@ -2,6 +2,7 @@ import Taro, { Component, connectSocket } from '@tarojs/taro';
 import { View, Text, Button } from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import { getTopicInfo, admireTopic, replyContent } from '../../actions/topicList';
+import { validateUser } from '../../actions/user';
 import Replies from '../../components/topicInfo/replies';
 import TopicInfo from '../../components/topicInfo/topicInfo';
 import ReplyContent from '../../components/topicInfo/replyContent';
@@ -67,8 +68,12 @@ class Detail extends Component {
     })
   }
  
-  reply() {
-    this.setState({showReplyContent: true});
+  async reply() {
+    const { user } = this.props;
+    const result = await validateUser(user);
+    if (result) {
+      this.setState({showReplyContent: true});
+    }
   }
 
   onHandleCancel() {
@@ -87,8 +92,9 @@ class Detail extends Component {
   }
 
   render() {
-    const { topicInfo, replies } = this.props;
+    const { topicInfo, replies, user } = this.props;
     const { showReplyContent } = this.state;
+    const selfPublish = user.loginname === topicInfo.author.loginname;
     return (
       <View className='detail-container'>
         {showReplyContent && 
@@ -97,8 +103,12 @@ class Detail extends Component {
             onOk={this.onHandleOk.bind(this)}
           />)
         }
-        <TopicInfo topicInfo={topicInfo} />
-        <Replies  replies={replies} onAdmire={this.admire.bind(this)}  />
+        <TopicInfo topicInfo={topicInfo} selfPublish={selfPublish} />
+        <Replies  
+          replies={replies} 
+          onAdmire={this.admire.bind(this)}  
+          user={user}
+        />
         <Button className='replyBtn' onClick={this.reply.bind(this)}>回复</Button>
       </View>
     )

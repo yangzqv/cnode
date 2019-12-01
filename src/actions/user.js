@@ -46,6 +46,8 @@ export function validateUser(params) {
   if (params&&params.accesstoken) {
     return true;
   }
-
+  Taro.navigateTo({
+    url: '/pages/login/login'
+  })
   return false;
 }

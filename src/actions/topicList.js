@@ -99,3 +99,18 @@ export async function submitTopic(params) {
   return false;
 }
 
+// 更新话题
+export async function updateTopic(params) {
+  const result = await postJSON(api.updateTopic, params);
+  if (result && result.data && result.data.success) {
+    return result.data;
+  } else {
+    Taro.showToast({
+      title: '更新话题失败',
+      icon: 'none'
+    })
+  }
+
+  return false;
+}
+

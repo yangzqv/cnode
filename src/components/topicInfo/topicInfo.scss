@@ -38,6 +38,15 @@
       font-size: 12PX;
       color: #757575;
     }
+    .topic-info-header-img {
+      display: flex;
+      flex-direction: row-reverse;
+      margin-top: 10PX;
+      .img {
+        width: 28PX;
+        height: 28PX;
+      }
+    }
   }
   .topic-info-body {
 

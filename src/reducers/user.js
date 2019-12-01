@@ -2,7 +2,7 @@ import { LOGIN_SUCCESS, LOGIN_FAIL } from '../constants/user';
 import { setCache, getCache } from '../utils/cache';
 
 const cachekey = 'cnode-user-key';
-const user_cache = getCache(cachekey);
+const user_cache = getCache(cachekey) ? getCache(cachekey) : {};
 const USER_STATE = {
   // accesstoken: null,
   // avatar_url: null,

@@ -55,10 +55,6 @@ class Menu extends Component {
       Taro.navigateTo({
         url: '/pages/user/user'
       })
-    } else {
-      Taro.navigateTo({
-        url: '/pages/login/login'
-      })
     }
   }
 

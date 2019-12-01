@@ -1,9 +1,23 @@
 import Taro from '@tarojs/taro';
 
-export function getJSON(url, data) {
-  return Taro.request({url: url, data: data, method: 'GET'});
+export async function getJSON(url, data) {
+  Taro.showLoading();
+  const result = await Taro.request({url: url, data: data, method: 'GET'});
+  if (result) {
+    Taro.hideLoading();
+    return result;
+  }
+
+  return false;
 }
 
-export function postJSON(url, data) {
-  return Taro.request({url: url, data: data, method: 'POST'});
+export async function postJSON(url, data) {
+  Taro.showLoading();
+  const result = await Taro.request({url: url, data: data, method: 'POST'});
+  if (result) {
+    Taro.hideLoading();
+    return result;
+  }
+
+  return false;
 }

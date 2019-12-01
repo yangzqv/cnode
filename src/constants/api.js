@@ -6,7 +6,8 @@ const apiObject = {
   getUserInfo: `${rootPath}/user/`,                          // 获取用户信息
   createTopic: `${rootPath}/topics`,                        // 新建话题
   replayTopic: `${rootPath}/topic/`,                         // 回复话题消息
-  upReplay: `${rootPath}/reply/`                            // 点赞
+  upReplay: `${rootPath}/reply/`,                          // 点赞
+  updateTopic: `${rootPath}/topics/update`                 // 更新主题
 }
 
 export default apiObject;

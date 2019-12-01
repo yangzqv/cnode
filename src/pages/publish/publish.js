@@ -1,19 +1,36 @@
 import Taro, { Component } from "@tarojs/taro";
 import { View, Text, Button, Picker, Input, Textarea } from "@tarojs/components";
-import { submitTopic } from '../../actions/topicList';
+import { submitTopic, updateTopic } from '../../actions/topicList';
 import { connect } from "@tarojs/redux";
 import "./publish.scss";
 
-@connect(({menu, user}) => ({
+@connect(({ menu, user, topicList }) => ({
   cataData: menu.cataData,
-  ...user
+  ...user,
+  topicInfo: topicList.topicInfo
 }))
 
 class Publish extends Component {
   state = {
     selectorChecked: '',
     title: '',
-    content: ''
+    content: '',
+    isEdit: false,
+    topicInfoContent: null
+  }
+
+  componentWillMount() {
+    const { edit } = this.$router.params;
+    const { topicInfo } = this.props;
+    this.setState({ isEdit: edit == 1 }, () => {
+      if (this.state.isEdit) {
+        this.setState({
+          topicInfoContent: topicInfo,
+          title: topicInfo.title,
+          content: topicInfo.content
+        })
+      }
+    })
   }
 
   changeCata(event) {
@@ -35,13 +52,18 @@ class Publish extends Component {
     })
   }
 
+  // 提交
   async submitTopic() {
-    const { selectorChecked, title, content } = this.state;
-    const { accesstoken } = this.props;
+    const { selectorChecked, title, content, isEdit } = this.state;
+    const { accesstoken, topicInfo } = this.props;
     if (selectorChecked && title && content ) {
-      const params = { tab: 'dev', title, content, accesstoken };
+      const params = { tab: 'dev', title, content, accesstoken, topic_id: topicInfo.id };
       const result = await submitTopic(params);
-      if (result) {
+      const updateResult = await updateTopic(params);
+      if (isEdit && updateResult) {
+        // 编辑
+        Taro.navigateBack();
+      } else if (result) {
         Taro.redirectTo({
           url: '/pages/user/user'
         })
@@ -56,7 +78,7 @@ class Publish extends Component {
 
   render() {
     const { cataData } = this.props;
-    const { selectorChecked } = this.state;
+    const { selectorChecked, topicInfoContent } = this.state;
 
     return (
       <View className='publish-topic'>
@@ -64,11 +86,13 @@ class Publish extends Component {
           placeholder='请输入您要发布的标题' 
           onInput={this.titleChange.bind(this)} 
           className='publish-topic-title'
+          value={topicInfoContent ? topicInfoContent.title : ''}
         />
         <Textarea 
           placeholder='请输入您要发布的内容' 
           onInput={this.contentChange.bind(this)} 
           className='publish-topic-content'  
+          value={topicInfoContent ? topicInfoContent.content : ''}
         />
         <Picker
           mode='selector'

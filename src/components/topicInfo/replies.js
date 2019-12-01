@@ -2,6 +2,7 @@ import Taro, { Component } from '@tarojs/taro';
 import { View, Text, Button, Image, RichText} from '@tarojs/components';
 import { connect } from '@tarojs/redux';
 import myTimeToLocal from '../../utils/date' 
+import { validateUser } from '../../actions/user';
 import './replies.scss';
 import zan from '../../assets/img/zan.png';
 import myzan from '../../assets/img/myzan.png';
@@ -9,9 +10,13 @@ import zhuan from '../../assets/img/zhuan.png'
 
 const isWeapp = process.env.TARO_ENV === 'weapp'
 class Replies extends Component {
-  admire(reply) {
-    if (this.props.onAdmire) {
-      this.props.onAdmire(reply);
+  async admire(reply) {
+    const { user, onAdmire } = this.props;
+    if (onAdmire && user) {
+      const result = await validateUser(user);
+      if (result) {
+        this.props.onAdmire(reply);
+      }
     }
   }
 
