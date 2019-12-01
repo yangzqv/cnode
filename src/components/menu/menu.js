@@ -4,13 +4,15 @@ import { AtDrawer } from 'taro-ui'
 import { connect } from '@tarojs/redux';
 import './menu.scss';
 import { showDrawer, hideDrawer, changeCata } from '../../actions/menu';
+import { validateUser } from '../../actions/user';
 import cata from '../../assets/img/cata.png';
 import login from '../../assets/img/login.png';
 
 
 // store.menu
-@connect(({ menu }) => ({
-  ...menu
+@connect(({ menu, user }) => ({
+  ...menu,
+  user
 }), (dispatch) => ({
   onShowMenu() {
     dispatch(showDrawer())
@@ -46,10 +48,18 @@ class Menu extends Component {
     }
   }
 
-  onHandleLogin() {
-    Taro.navigateTo({
-      url: '/pages/login/login'
-    })
+  async onHandleLogin() {
+    const { user } = this.props;
+    const result = await validateUser(user);
+    if (result) {
+      Taro.navigateTo({
+        url: '/pages/user/user'
+      })
+    } else {
+      Taro.navigateTo({
+        url: '/pages/login/login'
+      })
+    }
   }
 
   render() {

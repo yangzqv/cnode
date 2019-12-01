@@ -40,3 +40,12 @@ export async function getUserInfo(params) {
 
   return false;
 }
+
+// 验证用户
+export function validateUser(params) {
+  if (params&&params.accesstoken) {
+    return true;
+  }
+
+  return false;
+}
