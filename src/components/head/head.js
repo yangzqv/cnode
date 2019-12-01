@@ -1,5 +1,5 @@
 import Taro, { Component } from '@tarojs/taro';
-import { View, Text, Button, Image } from '@tarojs/components';
+import { View, Text, Button, Image } from "@tarojs/components";
 import { connect } from '@tarojs/redux';
 import './head.scss';
 import loginBack from '../../assets/img/loginBack.jpg';
